@@ -1,0 +1,3 @@
+REPORT_SIZE: 1000
+REPORT_DIR: report
+LOG_DIR: /log

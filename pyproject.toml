@@ -1,0 +1,50 @@
+[tool.poetry]
+name = "loganalyzer"
+version = "0.1.0"
+description = ""
+authors = ["AnastasAlexandrovich <a-khoroshilova@mail.ru>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pre-commit = "^3.8.0"
+pytest = "^8.3.3"
+flake8-pyproject = "^1.2.3"
+black = "^24.8.0"
+structlog = "^24.4.0"
+pyyaml = "^6.0.2"
+
+[tool.flake8]
+max-line-length = 160
+extend-ignore = ["E203"]
+exclude = [".git", "__pycache__", "dist"]
+max-complexity = 10
+
+[tool.black]
+line-length = 160
+target-version = ['py312']
+include = '\.pyi?$'
+exclude = '''
+
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+  | foo.py           # also separately exclude a file named foo.py in
+                     # the root of the project
+)
+'''
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
